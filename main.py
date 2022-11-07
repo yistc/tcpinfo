@@ -9,6 +9,7 @@ async def root():
 
 @app.get("/id", response_class=PlainTextResponse)
 async def get_id(request: Request):
-    client_host = request.client.host
-    return client_host
+    # client_host = request.client.host
+    return(request.headers)
+    # return client_host
 
