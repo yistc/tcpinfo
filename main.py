@@ -7,12 +7,9 @@ app = FastAPI()
 async def root():
     return {"message": "Hello World"}
 
-@app.get("/id")
+@app.get("/id", responses=PlainTextResponse)
 async def get_id(request: Request):
-    if request.client.host is not None:
-        return(request.client.host)
-    else:
-        return(request.headers)
+    return request.client.host
     # client_host = request.client.host
     # return client_host
 
