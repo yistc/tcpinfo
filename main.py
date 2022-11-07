@@ -7,7 +7,7 @@ app = FastAPI()
 async def root():
     return {"message": "Hello World"}
 
-@app.get("/id", response_class=PlainTextResponse)
+@app.get("/id")
 async def get_id(request: Request):
     # client_host = request.client.host
     return(request.headers)
