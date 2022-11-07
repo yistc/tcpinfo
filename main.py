@@ -9,7 +9,7 @@ async def root():
 
 @app.get("/id")
 async def get_id(request: Request):
-    if request.client.host:
+    if request.client.host is not None:
         return(request.client.host)
     else:
         return(request.headers)
